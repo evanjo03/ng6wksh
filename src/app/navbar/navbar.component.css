@@ -13,4 +13,7 @@
   list-style-type: none;
   background: blueviolet;
   margin: 0;
+  float: right;
+  display: block;
+  width: 100%;
 }
