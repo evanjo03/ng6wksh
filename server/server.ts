@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 })
 
 app.get("/", (req,res) => {
-    res.send("Hello there. GENERAL KENOBI")
+    res.send([{message: "Hello there. GENERAL KENOBI"}])
 })
 
 app.listen(4201, "127.0.0.1", () => {

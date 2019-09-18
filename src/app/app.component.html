@@ -1,2 +1,5 @@
 <app-navbar></app-navbar>
+<div *ngFor="let message of messages | async">
+    {{message.message}}
+</div>
 <router-outlet></router-outlet>
