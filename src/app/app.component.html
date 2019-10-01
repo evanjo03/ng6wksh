@@ -3,5 +3,9 @@
     {{message.message}}
 </div>
 
+<div *ngFor="let user of users | async">
+    {{user.message}}
+</div>
+
 <button (click) = "post()">Create User</button>
 <router-outlet></router-outlet>

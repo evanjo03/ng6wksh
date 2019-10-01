@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router()
+// const router = express.Router()
 
 const app = express();
 
@@ -17,16 +17,22 @@ app.use((req, res, next) => {
 })
 
 
+app.use(express.json());
 
-
-router.get("/", (req, res) => {
-    res.send("Hello World");
+app.get("/", (req, res) => {
+        res.send([{
+            message: "Hello there"
+        }]
+    );
 })
-router.get("/users", (req, res) => {
-    res.send([]);
+app.get("/users", (req, res) => {
+    res.send([{
+        message: "users"
+    }]);
 })
-router.post("/users", (req, res) => {
-    res.send({ body: req.body })
+app.post("/users", (req, res) => {
+    console.log(req.body)
+    res.send({body: req.body})
 })
 
 
