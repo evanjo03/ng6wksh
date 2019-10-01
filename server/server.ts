@@ -1,4 +1,5 @@
 const express = require('express');
+const router = express.Router()
 
 const app = express();
 
@@ -15,9 +16,22 @@ app.use((req, res, next) => {
     }
 })
 
-app.get("/", (req,res) => {
-    res.send([{message: "Hello there. GENERAL KENOBI"}]);
+
+
+
+router.get("/", (req, res) => {
+    res.send("Hello World");
 })
+router.get("/users", (req, res) => {
+    res.send([]);
+})
+router.post("/users", (req, res) => {
+    res.send({ body: req.body })
+})
+
+
+
+
 
 app.listen(4201, "127.0.0.1", () => {
     console.log("Server listening on port 4201");

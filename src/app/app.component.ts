@@ -9,8 +9,17 @@ import { HttpClient } from "@angular/common/http"
 export class AppComponent {
   messages = this.http.get<any[]>('http://localhost:4201');
 
-  constructor(private http: HttpClient) {
+  
 
+  constructor(private http: HttpClient) {}
+
+  post() {
+    let user = {
+      username: "Jim",
+      password: "Jim"
+    }
+    this.http.post<any>('http://localhost:4201/users', user)
+    .subscribe(next => console.log(next));
   }
-  title = 'workshop';
+  
 }
