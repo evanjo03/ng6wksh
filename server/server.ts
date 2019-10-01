@@ -1,9 +1,7 @@
-import express = require('express');
-import { routes } from "./routes";
+const express = require('express');
+const router = express.Router()
 
 const app = express();
-
-
 
 
 app.use((req, res, next) => {
@@ -18,8 +16,20 @@ app.use((req, res, next) => {
     }
 })
 
-app.use(express.json());
-app.use("/", routes)
+
+
+
+router.get("/", (req, res) => {
+    res.send("Hello World");
+})
+router.get("/users", (req, res) => {
+    res.send([]);
+})
+router.post("/users", (req, res) => {
+    res.send({ body: req.body })
+})
+
+
 
 
 
